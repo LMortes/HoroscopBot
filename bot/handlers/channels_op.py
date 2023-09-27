@@ -5,6 +5,7 @@ from bot.loader import bot
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 async def check_subscribe_channels(user_id):
+    global chat_member
     is_subscribed = await db.get_subscribed_op(user_id)
     channels = await db.get_channels_op()
     channels_not_sub = []
